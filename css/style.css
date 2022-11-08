@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive;
+    color: #e1e1e1;
+}
+
+body{
+    background-image: url('/assets/img/back1.png');
+    
+}
+
+.container{
+  zoom: 0.6;
+}
+
+/* .createplanet{
+    margin-top: 20px;
+    width: 10rem;
+    height: 10rem;
+    background-color: grey;
+} */
+/* html,body,.container {
+    height:100%;
+}
+.container {
+    display:table;
+    width: 100%;
+    margin-top: -50px;
+    padding: 50px 0 0 0; /*set left/right padding according to needs*/
+    /* box-sizing: border-box;
+}
+
+.row {
+    height: 100%;
+    display: table-row;
+}
+
+.row .no-float {
+  display: table-cell;
+  float: none;
+} */
+
+.todo_column{
+  min-width: 20rem;
+  min-height: 20rem;
+}
+
+.createplanet {
+    border: 1px solid white;
+    font-size: 18px;
+    color: #e1e1e1;
+    font-family: inherit;
+    font-weight: 800;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    background: none;
+    width: 9rem;
+    height: 5rem;
+    text-transform: uppercase;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+  }
+  .createplanet :hover {
+    color: #fff;
+  }
+
+  .planet{
+    height: 100px;
+    width: 100px;
+    /* background-image: url('/assets/img/1.png'); */
+  }
+
+  .introtask{
+    color: white;
+    background-color: rgba(0, 0, 0,0);
+    border: none;
+    font-size: 20px;
+  }
+
+  ::placeholder {
+    color: rgba(255, 255, 255, 0.75);
+    opacity: 1;
+  }
+
+  .tasktodo{
+    padding: 2rem;
+  }
+
+  #destroyElements{
+    min-height: 15rem;
+    max-height: 15rem;
+  }
+
+  #destroyElements div{
+    animation-name: voidEffect;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    position: relative;
+  }
+
+
+  /* DRAG AND DROP SYSTEM */
+
+.taskElement.selected{
+  transform: scale(1.2);
+}
+.taskElement.drag{
+  opacity: 0;
+}
+
+/* .taskElement.ghost{
+  border:1px solid white;
+} */
+
+@keyframes voidEffect {
+  from{
+    transform: scale(1);
+    bottom: 0;
+  }
+  to{
+    transform: scale(0);
+    bottom: -250px;
+
+  }
+}
