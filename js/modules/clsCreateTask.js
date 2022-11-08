@@ -14,13 +14,15 @@ class clsCreateTask{
     this.done = document.getElementById('done');
     
     //External resources
-    this.inputtext = document.getElementById('newtask').value;
+    this.inputtext = document.getElementById('newtask');
+    this.form= document.getElementById('task-form-input');
     this.FPS = 120;
 
-    //Position
-    this.position = 0;
+    //ChosenNumber
+    this.chosenNumber = this.getRandomNumber(8);
+    this.jsonPlanet = [];
 
-    //Random Image
+    
 }
     getRandomNumber(pLimit){
         let rand = Math.random() * pLimit;
@@ -36,11 +38,11 @@ class clsCreateTask{
         
         this.text.setAttribute('class',"col");
         this.text.setAttribute('id', 'tasktext');
-        this.text.innerHTML = this.inputtext;
+        this.text.innerHTML = this.inputtext.value;
         
 
         this.img.setAttribute('id', 'tasktext');
-        this.canvas = new clsAnimatePlanet(this.img,this.getRandomNumber(8), this.FPS,100,100,119);
+        this.getRandomPlanet();
         this.canvas.frame();
 
         this.child.appendChild(this.img);
@@ -49,25 +51,27 @@ class clsCreateTask{
 
         this.linkDiv(this.firstParent, this.row);
 
+        this.createJSONwithDATA();
+
         //Reset of variables
         this.row = document.createElement('div');
         this.child = document.createElement('div');
         this.text = document.createElement('div');
         this.img = document.createElement('canvas');
+        this.inputtext.value = '';
     }
 
     linkDiv(pParent, pChild){
         pParent.appendChild(pChild)
     }
 
-        //Montar y linkar al padre primero
+    getRandomPlanet(){
+        this.canvas = new clsAnimatePlanet(this.img,this.chosenNumber, this.FPS,100,100,119);
+    }
 
-        //Enviar a todo
-
-        //Enviar a doing
-
-        //Eliminar en done
-
-
+    createJSONwithDATA(){
+        this.jsonPlanet = JSON.stringify({task: this.inputtext.value});
+        return this.jsonPlanet;
+    }
 
 }
