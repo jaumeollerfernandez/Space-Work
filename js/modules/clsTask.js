@@ -70,7 +70,10 @@ class clsTask{
     }
 
     createJSONwithDATA(){
-        this.jsonPlanet = JSON.stringify({task: this.inputtext.value});
+        this.jsonPlanet = JSON.stringify({
+            text: this.inputtext.value,
+            position: 'todo'
+        });
         return this.jsonPlanet;
     }
 
