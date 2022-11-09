@@ -1,4 +1,4 @@
-class clsCreateTask{
+class clsTask{
 
     constructor(){
     //Future children
