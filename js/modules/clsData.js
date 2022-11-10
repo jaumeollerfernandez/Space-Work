@@ -13,13 +13,15 @@ class clsData{
         this.ACTUAL_LOCALSTORAGE.push(localStorage.getItem(this.keys[this.i]));
         }
 
-    
+        console.log(this.ACTUAL_LOCALSTORAGE);
         return this.ACTUAL_LOCALSTORAGE;
 
     }
 
     mountTasks(){
-        
+        this.ACTUAL_LOCALSTORAGE.forEach(element => {
+            
+        });
 
     }
 

@@ -1,3 +1,6 @@
+/**
+ * Generates a random image with canvas, that will be appended into the task
+ */
 class clsAnimatePlanet{
     constructor(idCanvas, pNumberPlanet, pFPS, pFramewidth, pFrameheight, pTotalFrames){
         this.canvas = idCanvas;
