@@ -2,7 +2,6 @@
  * @author Jaume Oller Fernández
  */
 
-
 /**
  * This variable creates a Drop zone to delete tasks
  */
@@ -26,4 +25,3 @@ localStorage.clear();
 
 var IDcount = 0 || 0;
 var ToLocalStorage = [];
-
