@@ -2,6 +2,7 @@
  * @author Jaume Oller Fernández
  */
 
+
 /**
  * This variable creates a Drop zone to delete tasks
  */
@@ -17,6 +18,7 @@ var Data = new clsData();
  * @returns Array
  */
 Data.obtainLocalData();
+Data.mountTasks();
 
 /**
  * Then, when we have the data, we need to clear it.
@@ -25,3 +27,4 @@ localStorage.clear();
 
 var IDcount = 0 || 0;
 var ToLocalStorage = [];
+

@@ -76,8 +76,11 @@ class clsTask{
                 this.child.appendChild(this.img);
                 this.child.appendChild(this.text);
                 this.row.appendChild(this.child);
-
-                this.linkDiv(this.firstParent, this.row);
+                if(this.old_position == true){
+                    this.linkDiv(this.old_position, this.row);
+                }else{
+                    this.linkDiv(this.firstParent, this.row);
+                }
 
                 this.createJSONwithDATA();
 
@@ -120,6 +123,7 @@ class clsTask{
             text: this.inputtext.value,
             position: 'todo'
         });
+        console.log(this.jsonPlanet);
         return this.jsonPlanet;
     }
 
