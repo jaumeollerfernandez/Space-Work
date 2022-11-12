@@ -33,7 +33,7 @@ class clsTask{
     /**
      * Variables that you need for those task that existed.
      */
-    this.old_inputtext = pTask || 'No he pillado el texto';
+    this.old_inputtext = pTask || this.inputtext;
     this.old_existed = pExisted || false;
     this.old_position = document.getElementById(pPosition) || document.getElementById('todo');
 }
@@ -123,7 +123,7 @@ class clsTask{
             text: this.inputtext.value,
             position: 'todo'
         });
-        console.log(this.jsonPlanet);
+        // console.log(this.jsonPlanet);
         return this.jsonPlanet;
     }
 
