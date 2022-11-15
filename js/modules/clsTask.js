@@ -61,7 +61,7 @@ class clsTask{
                 this.child.setAttribute('class', "text-center col-12 tasktodo");
                 
                 this.text.setAttribute('class',"col");
-                this.text.setAttribute('id', 'tasktext');
+                this.text.setAttribute('id', 'tasktext-text');
 
                 if(this.old_existed == false){
                     this.text.innerHTML = this.inputtext.value;
@@ -69,7 +69,7 @@ class clsTask{
                     this.text.innerHTML = this.old_inputtext;
                 }
                 
-                this.img.setAttribute('id', 'tasktext');
+                this.img.setAttribute('id', 'tasktext-img');
                 this.getRandomPlanet();
                 this.canvas.frame();
 

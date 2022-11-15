@@ -7,8 +7,22 @@
  * @author Jaume Oller Fernández
  */
 
+/**
+ * Instances class to manage Data between Local Storage and the actual view.
+ */
 var Data = new clsData();
 
+/**
+ * This is the button that causes a lot of trouble. His name is a must.
+ */
+var boton = document.getElementById('BOTONCABRON');
+
+/**
+ * Listener assigned to Generate new tasks.
+ */
+boton.addEventListener('click',()=>{
+  Data.newTask()
+})
 
 /**
 * This variable creates a Drop zone to delete tasks
@@ -16,23 +30,16 @@ var Data = new clsData();
 const VOID = new clsVoid();
 
 /**
-* This object controls all the data will be managed in LocalStorage
-*/
-
-/**
 * From Local Storage, we need that data from the previous session. That's what this call does.
 * @returns Array
 */
 Data.obtainLocalData();
+
+/**
+ * This will generate all the previous session tasks into the position.
+ */
 Data.mountTasks();
 
-
-// /**
-//  * Then, when we have the data, we need to clear it.
-//  */
-// localStorage.clear();
-// var ToLocalStorage = [];
-// console.log(ToLocalStorage);
 console.log("'Todos los recursos terminaron de cargar!");
 
 
