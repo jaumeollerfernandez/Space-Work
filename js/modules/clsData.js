@@ -24,7 +24,9 @@ class clsData {
   mountTasks() {
     this.ACTUAL_LOCALSTORAGE.forEach((element) => {
       this.newTask = new clsTask(element["text"], true, element["position"]);
+      console.log(this.newTask);
       this.newTask.mountDiv();
+      console.log(this.ACTUAL_LOCALSTORAGE);
     });
     // this.pushTaskintoAuxArray();
 }

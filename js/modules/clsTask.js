@@ -119,10 +119,16 @@ class clsTask{
      * @returns jsonPlanet
      */
     createJSONwithDATA(){
-        this.jsonPlanet = JSON.stringify({
-            text: this.inputtext.value,
-            position: 'todo'
-        });
+        if(this.old_existed == false){
+            this.jsonPlanet = JSON.stringify({
+                text: this.inputtext.value,
+                position: 'todo'});
+        }else{
+            this.jsonPlanet = JSON.stringify({
+                text: this.old_inputtext,
+                position: 'todo'});
+        }
+
         // console.log(this.jsonPlanet);
         return this.jsonPlanet;
     }
