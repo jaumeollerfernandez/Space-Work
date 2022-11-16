@@ -127,16 +127,17 @@ class clsTask{
     createJSONwithDATA(){
         if(this.old_existed == false){
             this.jsonPlanet = JSON.stringify({
-                id: this.Task_ID,
+                id: this.Task_ID.toString(),
                 text: this.inputtext.value,
                 position: 'todo'});
         }else{
             this.jsonPlanet = JSON.stringify({
-                id: this.Task_ID,
+                id: this.Task_ID.toString(),
                 text: this.old_inputtext,
                 position: 'todo'});
         }
 
+        console.log('JsonPlanet de la task')
         console.log(this.jsonPlanet);
         return this.jsonPlanet;
     }
