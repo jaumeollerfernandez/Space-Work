@@ -78,6 +78,7 @@ class clsData {
         this.ACTUAL_LOCALSTORAGE.remove(element);
       }
     })
+    console.log(this.ACTUAL_LOCALSTORAGE);
   }
 
 }

@@ -56,7 +56,7 @@ VOIDAREA.addEventListener("dragenter", (ev) => {
     
     setTimeout(() => {
       localStorage.removeItem(ev.target.firstChild.nextElementSibling.id);
-      
+      Data.removeElementfromArray(ev.target.firstChild.nextElementSibling.id);
       VOIDAREA.firstChild.nextElementSibling.remove();
     }, 2000);
   }
