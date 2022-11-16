@@ -1,5 +1,6 @@
-//To do
-
+/**
+ * Sortable group for Elements in 'To Do'
+ */
 const TODO = document.getElementById("todo");
 Sortable.create(TODO, {
   group: "shared",
@@ -9,7 +10,9 @@ Sortable.create(TODO, {
   dragClass: "drag",
 });
 
-//Doing
+/**
+ * Sortable group for Elements in 'Doing'
+ */
 const DOING = document.getElementById("doing");
 Sortable.create(DOING, {
   group: "shared",
@@ -19,7 +22,9 @@ Sortable.create(DOING, {
   dragClass: "drag",
 });
 
-//Done
+/**
+ * Sortable group for Elements in 'Done'
+ */
 const DONE = document.getElementById("done");
 Sortable.create(DONE, {
   group: "shared",
@@ -29,8 +34,10 @@ Sortable.create(DONE, {
   dragClass: "drag",
 });
 
-//void
 
+/**
+ * Sortable group for Elements in 'Drop Zone'
+ */
 const VOIDAREA = document.getElementById("destroyElements");
 Sortable.create(VOIDAREA, {
   group: "shared",
@@ -40,6 +47,9 @@ Sortable.create(VOIDAREA, {
   dragClass: "drag",
 });
 
+/**
+ * Listener that activates when a 'dragenter' element is triggered. Makes the remove on the task div.
+ */
 VOIDAREA.addEventListener("dragenter", (ev) => {
   console.log(ev.target);
   if (VOIDAREA.hasChildNodes()) {

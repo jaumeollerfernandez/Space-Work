@@ -13,7 +13,7 @@
 var Data = new clsData();
 
 /**
- * This is the button that causes a lot of trouble. His name is a must.
+ * This is the variable that targets 'Create Button'.
  */
 var boton = document.getElementById('BOTONCABRON');
 
@@ -39,9 +39,6 @@ Data.obtainLocalData();
  * This will generate all the previous session tasks into the position.
  */
 Data.mountTasks();
-
-console.log("'Todos los recursos terminaron de cargar!");
-
 
 
 
