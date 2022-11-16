@@ -3,7 +3,7 @@
  */
 class clsTask{
 
-    constructor(pTask, pExisted, pPosition){
+    constructor(pTask, pExisted, pPosition, pTaskID){
 
     /**
      * Future variables that will be children
@@ -37,6 +37,7 @@ class clsTask{
     /**
      * Variables that you need for those task that existed.
      */
+    this.Task_ID = pTaskID || 0;
     this.old_inputtext = pTask || this.inputtext;
     this.old_existed = pExisted || false;
     this.old_position = document.getElementById(pPosition) || document.getElementById('todo');
@@ -61,6 +62,7 @@ class clsTask{
 
        
                 this.row.setAttribute('class', 'row taskElement');
+                this.row.setAttribute('id', this.Task_ID);
                 
                 this.child.setAttribute('class', "text-center col-12 tasktodo");
                 
@@ -125,15 +127,17 @@ class clsTask{
     createJSONwithDATA(){
         if(this.old_existed == false){
             this.jsonPlanet = JSON.stringify({
+                id: this.Task_ID,
                 text: this.inputtext.value,
                 position: 'todo'});
         }else{
             this.jsonPlanet = JSON.stringify({
+                id: this.Task_ID,
                 text: this.old_inputtext,
                 position: 'todo'});
         }
 
-        // console.log(this.jsonPlanet);
+        console.log(this.jsonPlanet);
         return this.jsonPlanet;
     }
 
