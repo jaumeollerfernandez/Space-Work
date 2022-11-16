@@ -72,4 +72,12 @@ class clsData {
 
   }
 
+  removeElementfromArray(pID){
+    this.ACTUAL_LOCALSTORAGE.forEach((element)=>{
+      if(element['id'] == pID){
+        this.ACTUAL_LOCALSTORAGE.remove(element);
+      }
+    })
+  }
+
 }
