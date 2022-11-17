@@ -61,3 +61,29 @@ VOIDAREA.addEventListener("dragenter", (ev) => {
     }, 2000);
   }
 });
+
+document.addEventListener('dragenter',(e)=>{
+//Pillar el target del objeto que se mueve
+setTimeout(() => {
+  let target = document.getElementById(e['relatedTarget']['id']);
+  console.log(target.parentNode.parentNode.id);
+
+  console.log(localStorage.getItem(target.id));
+}, 1000);
+
+// console.log(target.id);
+
+//Determinar en qué lugar se encuentra
+
+
+
+//Cambiarle la posición del localstorage
+
+  // console.log(e);
+  // console.log('aqui esta el doing')
+  // console.log(e['toElement']['children']['todo']['id']);
+  // console.log(e['toElement']['children']['doing']['id']);
+  // console.log(e['toElement']['children']['done']['id']);
+  // if(e[])
+  // let target = document.getElementById()
+})

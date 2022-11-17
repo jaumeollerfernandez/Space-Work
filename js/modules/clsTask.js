@@ -62,9 +62,9 @@ class clsTask{
 
        
                 this.row.setAttribute('class', 'row taskElement');
-                this.row.setAttribute('id', this.Task_ID);
                 
                 this.child.setAttribute('class', "text-center col-12 tasktodo");
+                this.child.setAttribute('id', this.Task_ID);
                 
                 this.text.setAttribute('class',"col");
                 this.text.setAttribute('id', 'tasktext-text');
