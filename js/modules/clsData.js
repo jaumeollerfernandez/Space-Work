@@ -2,7 +2,7 @@
  * This class will manage all the data from LocalStorage.
  */
 class clsData {
-  constructor() {
+  constructor(){
     this.ACTUAL_LOCALSTORAGE = [];
     this.keys = Object.keys(localStorage);
     this.i = new Date().getTime();
@@ -25,11 +25,15 @@ class clsData {
   mountTasks() {
 
     // this.i= 0;
+    localStorage.clear();
     this.ACTUAL_LOCALSTORAGE.forEach((element) => {
       this.newTaskToDo = new clsTask(element["text"], true, element["position"],this.i);
+      this.i = new Date().getTime();
+      localStorage.setItem(`${this.newTaskToDo.Task_ID}`, `{"id":"${this.newTaskToDo.Task_ID}","text":"${this.newTaskToDo.old_inputtext}","position":"todo"}`)
       this.newTaskToDo.mountDiv();
     });
-    this.ACTUAL_LOCALSTORAGE = [];
+
+   
     // this._updateKeys();
     // console.log('mountTasks')
     // console.log(this.i);

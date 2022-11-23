@@ -7,7 +7,7 @@ Sortable.create(TODO, {
   animation: 150,
   chosenClass: "selected",
   // ghostClass:"ghost"
-  dragClass: "drag",
+  dragClass: "dragenter",
 });
 
 /**
@@ -19,7 +19,7 @@ Sortable.create(DOING, {
   animation: 150,
   chosenClass: "selected",
   // ghostClass:"ghost"
-  dragClass: "drag",
+  dragClass: "dragenter",
 });
 
 /**
@@ -31,7 +31,7 @@ Sortable.create(DONE, {
   animation: 150,
   chosenClass: "selected",
   // ghostClass:"ghost"
-  dragClass: "drag",
+  dragClass: "dragenter",
 });
 
 
@@ -44,7 +44,7 @@ Sortable.create(VOIDAREA, {
   animation: 150,
   chosenClass: "selected",
   // ghostClass:"ghost"
-  dragClass: "drag",
+  dragClass: "dragenter",
 });
 
 /**
@@ -62,43 +62,51 @@ VOIDAREA.addEventListener("dragenter", (ev) => {
   }
 });
 
-TODO.addEventListener('dragenter',(e)=>{
+TODO.addEventListener('drop',(e)=>{
   setTimeout(() => {
-    let LocateTarget = document.getElementById(e['relatedTarget']['id']);
-    let target = LocateTarget.id;
-    let text = LocateTarget.innerText;
-    let currentPosition = "doing";
-    if(target.length == 13){
-      let JSONtoLocate = `{"id":"${target}","text":"${text}","position","${currentPosition}"}`
-      localStorage.setItem(`${target}`,`${JSONtoLocate}`)
-    }
-    console.log('doing')
-  }, 1000);
+    // console.log(TODO.childNodes)
+    let column = TODO.children
+    let columnLength = column.length
 
-});
-DOING.addEventListener('dragenter',(e)=>{
-  setTimeout(() => {
-    let LocateTarget = document.getElementById(e['relatedTarget']['id']);
-    let target = LocateTarget.id;
-    let currentPosition = "done";
-    if(target.length == 13){
-      let JSONtoLocate = `{"id":"${target}","text":"${text}","position","${currentPosition}"}`
-      localStorage.setItem(`${target}`,`${JSONtoLocate}`)
+    for(let i = 0; i<=columnLength; i++){
+      console.log(column[i]['firstChild']['id'])
+      console.log(column[i]['firstChild']['innerText'])
     }
-    console.log('done')
-  }, 1000);
-
-});
-DONE.addEventListener('dragenter',(e)=>{
-  setTimeout(() => {
-    let LocateTarget = document.getElementById(e['relatedTarget']['id']);
-    let target = LocateTarget.id;
-    let currentPosition = "todo";
-    if(target.length == 13){
-      let JSONtoLocate = `{"id":"${target}","text":"${text}","position","${currentPosition}"}`
-      localStorage.setItem(`${target}`,`${JSONtoLocate}`)
-    }
+    console.log(columnLength-1);
+    // console.log(column[0]['firstChild']['id']);
+    // }
     console.log('todo')
+    console.log(e)
+  }, 1000);
+
+});
+DOING.addEventListener('drop',(e)=>{
+  setTimeout(() => {
+    let column = DOING.children
+    console.log(column);
+    // let LocateTarget = document.getElementById(e['relatedTarget']['id']);
+    // let target = LocateTarget.id;
+    // let currentPosition = "done";
+    // if(target.length == 13){
+    //   let JSONtoLocate = `{"id":"${target}","text":"${text}","position","${currentPosition}"}`
+    //   localStorage.setItem(`${target}`,`${JSONtoLocate}`)
+    // }
+    console.log('doing')
+    console.log(e)
+  }, 1000);
+
+});
+DONE.addEventListener('drop',(e)=>{
+  setTimeout(() => {
+    // let LocateTarget = document.getElementById(e['relatedTarget']['id']);
+    // let target = LocateTarget.id;
+    // let currentPosition = "todo";
+    // if(target.length == 13){
+    //   let JSONtoLocate = `{"id":"${target}","text":"${text}","position","${currentPosition}"}`
+    //   localStorage.setItem(`${target}`,`${JSONtoLocate}`)
+    // }
+    console.log('done')
+    console.log(e)
   }, 1000);
 
 })
