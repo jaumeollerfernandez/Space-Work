@@ -62,14 +62,46 @@ VOIDAREA.addEventListener("dragenter", (ev) => {
   }
 });
 
-document.addEventListener('dragenter',(e)=>{
-//Pillar el target del objeto que se mueve
-setTimeout(() => {
-  let target = document.getElementById(e['relatedTarget']['id']);
-  console.log(target.parentNode.parentNode.id);
+TODO.addEventListener('dragenter',(e)=>{
+  setTimeout(() => {
+    let LocateTarget = document.getElementById(e['relatedTarget']['id']);
+    let target = LocateTarget.id;
+    let text = LocateTarget.innerText;
+    let currentPosition = "doing";
+    if(target.length == 13){
+      let JSONtoLocate = `{"id":"${target}","text":"${text}","position","${currentPosition}"}`
+      localStorage.setItem(`${target}`,`${JSONtoLocate}`)
+    }
+    console.log('doing')
+  }, 1000);
 
-  console.log(localStorage.getItem(target.id));
-}, 1000);
+});
+DOING.addEventListener('dragenter',(e)=>{
+  setTimeout(() => {
+    let LocateTarget = document.getElementById(e['relatedTarget']['id']);
+    let target = LocateTarget.id;
+    let currentPosition = "done";
+    if(target.length == 13){
+      let JSONtoLocate = `{"id":"${target}","text":"${text}","position","${currentPosition}"}`
+      localStorage.setItem(`${target}`,`${JSONtoLocate}`)
+    }
+    console.log('done')
+  }, 1000);
+
+});
+DONE.addEventListener('dragenter',(e)=>{
+  setTimeout(() => {
+    let LocateTarget = document.getElementById(e['relatedTarget']['id']);
+    let target = LocateTarget.id;
+    let currentPosition = "todo";
+    if(target.length == 13){
+      let JSONtoLocate = `{"id":"${target}","text":"${text}","position","${currentPosition}"}`
+      localStorage.setItem(`${target}`,`${JSONtoLocate}`)
+    }
+    console.log('todo')
+  }, 1000);
+
+})
 
 // console.log(target.id);
 
@@ -86,4 +118,3 @@ setTimeout(() => {
   // console.log(e['toElement']['children']['done']['id']);
   // if(e[])
   // let target = document.getElementById()
-})
