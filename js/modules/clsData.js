@@ -29,7 +29,7 @@ class clsData {
     this.ACTUAL_LOCALSTORAGE.forEach((element) => {
       this.newTaskToDo = new clsTask(element["text"], true, element["position"],this.i);
       this.i = new Date().getTime();
-      localStorage.setItem(`${this.newTaskToDo.Task_ID}`, `{"id":"${this.newTaskToDo.Task_ID}","text":"${this.newTaskToDo.old_inputtext}","position":"todo"}`)
+      localStorage.setItem(`${this.newTaskToDo.Task_ID}`, `{"id":"${this.newTaskToDo.Task_ID}","text":"${this.newTaskToDo.old_inputtext}","position":${this.newTaskToDo.old_position}}`)
       this.newTaskToDo.mountDiv();
     });
 

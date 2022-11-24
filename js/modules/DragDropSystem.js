@@ -63,53 +63,67 @@ VOIDAREA.addEventListener("dragenter", (ev) => {
 });
 
 TODO.addEventListener('drop',(e)=>{
-  setTimeout(() => {
     // console.log(TODO.childNodes)
-    let column = TODO.children
+    let column = DOING.children
     let columnLength = column.length
 
     for(let i = 0; i<=columnLength; i++){
-      console.log(column[i]['firstChild']['id'])
-      console.log(column[i]['firstChild']['innerText'])
+      let id = column[i]['firstChild']['id']||null;
+      let innertext = column[i]['firstChild']['innerText']
+      let currentPosition = "todo";
+      if( id!=null){
+        let JSONtoLocate = `{"id":"${id}","text":"${innertext}","position":"${currentPosition}"}`
+        localStorage.setItem(`${id}`,`${JSONtoLocate}`)
+      }
     }
-    console.log(columnLength-1);
-    // console.log(column[0]['firstChild']['id']);
-    // }
-    console.log('todo')
-    console.log(e)
-  }, 1000);
+  });
 
-});
+// });
 DOING.addEventListener('drop',(e)=>{
-  setTimeout(() => {
+ 
     let column = DOING.children
-    console.log(column);
+    let columnLength = column.length
+    console.log(column)
+
+    for(let i = 0; i<=columnLength; i++){
+      let id = column[i]['firstChild']['id']||null;
+      let innertext = column[i]['firstChild']['innerText']
+      let currentPosition = "doing";
+      if( id!=null){
+        let JSONtoLocate = `{"id":"${id}","text":"${innertext}","position":"${currentPosition}"}`
+        localStorage.setItem(`${id}`,`${JSONtoLocate}`)
+      }
+    }
+    
+    console.log(columnLength-1);
     // let LocateTarget = document.getElementById(e['relatedTarget']['id']);
     // let target = LocateTarget.id;
-    // let currentPosition = "done";
     // if(target.length == 13){
     //   let JSONtoLocate = `{"id":"${target}","text":"${text}","position","${currentPosition}"}`
     //   localStorage.setItem(`${target}`,`${JSONtoLocate}`)
     // }
     console.log('doing')
     console.log(e)
-  }, 1000);
+  });
 
-});
+// });
 DONE.addEventListener('drop',(e)=>{
-  setTimeout(() => {
-    // let LocateTarget = document.getElementById(e['relatedTarget']['id']);
-    // let target = LocateTarget.id;
-    // let currentPosition = "todo";
-    // if(target.length == 13){
-    //   let JSONtoLocate = `{"id":"${target}","text":"${text}","position","${currentPosition}"}`
-    //   localStorage.setItem(`${target}`,`${JSONtoLocate}`)
-    // }
-    console.log('done')
-    console.log(e)
-  }, 1000);
+  console.log(e)
+    let column = DOING.children
+    let columnLength = column.length
 
-})
+    for(let i = 0; i<=columnLength; i++){
+      let id = column[i]['firstChild']['id']||null;
+      let innertext = column[i]['firstChild']['innerText']
+      let currentPosition = "done";
+      if( id!=null){
+        let JSONtoLocate = `{"id":"${id}","text":"${innertext}","position":"${currentPosition}"}`
+        localStorage.setItem(`${id}`,`${JSONtoLocate}`)
+      }
+    }
+  });
+
+// })
 
 // console.log(target.id);
 
