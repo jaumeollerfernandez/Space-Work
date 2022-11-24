@@ -137,8 +137,6 @@ class clsTask{
                 position: 'todo'});
         }
 
-        console.log('JsonPlanet de la task')
-        console.log(this.jsonPlanet);
         return this.jsonPlanet;
     }
 

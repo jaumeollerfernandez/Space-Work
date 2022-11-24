@@ -17,7 +17,6 @@ class clsData {
       this.jsonValue = JSON.parse(localStorage.getItem(this.keys[this.count]));
       this.ACTUAL_LOCALSTORAGE.push(this.jsonValue);
     }
-    console.log(this.ACTUAL_LOCALSTORAGE);
 }
   /**
    * When all the data is loaded into our ACTUAL_LOCALSTORAGE, the next step is to mount all these elements into the last position taken.
@@ -29,7 +28,7 @@ class clsData {
     this.ACTUAL_LOCALSTORAGE.forEach((element) => {
       this.newTaskToDo = new clsTask(element["text"], true, element["position"],this.i);
       this.i = new Date().getTime();
-      localStorage.setItem(`${this.newTaskToDo.Task_ID}`, `{"id":"${this.newTaskToDo.Task_ID}","text":"${this.newTaskToDo.old_inputtext}","position":${this.newTaskToDo.old_position}}`)
+      localStorage.setItem(`${this.newTaskToDo.Task_ID}`, `{"id":"${this.newTaskToDo.Task_ID}","text":"${this.newTaskToDo.old_inputtext}","position":"${this.newTaskToDo.old_position.id}"}`)
       this.newTaskToDo.mountDiv();
     });
 
