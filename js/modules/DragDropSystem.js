@@ -51,12 +51,18 @@ Sortable.create(VOIDAREA, {
  * Listener that activates when a 'dragenter' element is triggered. Makes the remove on the task div.
  */
 VOIDAREA.addEventListener("drop", (ev) => {
-  while(VOIDAREA.hasChildNodes()) {
-    
-      localStorage.removeItem(ev.target.offsetParent.id);
-      // Data.removeElementfromArray(ev.target.firstChild.nextElementSibling.id);
-      VOIDAREA.firstChild.nextElementSibling.remove();
-  }
+  
+  let VOIDtarget = ev['currentTarget']['children']['0']['childNodes']['0']['id'];
+  localStorage.removeItem(VOIDtarget);
+  setTimeout(() => {
+    while(VOIDAREA.hasChildNodes()) {
+      console.log(VOIDtarget);
+        // debugger;
+        // Data.removeElementfromArray(ev.target.firstChild.nextElementSibling.id);
+        VOIDAREA.firstChild.nextElementSibling.remove();
+        }
+  }, 1000);
+
 });
 
 // TODO.addEventListener('drop',(e)=>{

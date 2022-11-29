@@ -15,33 +15,6 @@ body{
   zoom: 0.6;
 }
 
-/* .createplanet{
-    margin-top: 20px;
-    width: 10rem;
-    height: 10rem;
-    background-color: grey;
-} */
-/* html,body,.container {
-    height:100%;
-}
-.container {
-    display:table;
-    width: 100%;
-    margin-top: -50px;
-    padding: 50px 0 0 0; /*set left/right padding according to needs*/
-    /* box-sizing: border-box;
-}
-
-.row {
-    height: 100%;
-    display: table-row;
-}
-
-.row .no-float {
-  display: table-cell;
-  float: none;
-} */
-
 .todo_column{
   min-width: 20rem;
   min-height: 20rem;
@@ -91,8 +64,8 @@ body{
   }
 
   #destroyElements{
-    min-height: 15rem;
-    max-height: 15rem;
+    min-height:35rem;
+    max-height: 35rem;
   }
 
   #destroyElements div{
