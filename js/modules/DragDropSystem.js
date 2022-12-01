@@ -44,7 +44,7 @@ Sortable.create(VOIDAREA, {
   animation: 150,
   chosenClass: "selected",
   // ghostClass:"ghost"
-  dragClass: "dragenter",
+  dragClass: "drop",
 });
 
 /**
